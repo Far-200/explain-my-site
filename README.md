@@ -8,16 +8,16 @@
 
 ## ✨ Features
 
-| Feature | Description |
-|---|---|
-| 🧠 AI Summary | What the website does, in plain English |
-| ⚙️ Tech Stack Guess | Framework, hosting, analytics detection |
-| 🎨 UI/UX Feedback | Design quality assessment with suggestions |
-| 🔐 Security Observations | Surface-level security flags |
-| 📋 Copy Report | Copy full analysis to clipboard |
-| 📥 Download PDF | Export a branded PDF report |
-| 🕐 History | Last 10 analyses saved locally |
-| ✅ URL Validation | Smart URL normalization + error handling |
+| Feature                  | Description                                |
+| ------------------------ | ------------------------------------------ |
+| 🧠 AI Summary            | What the website does, in plain English    |
+| ⚙️ Tech Stack Guess      | Framework, hosting, analytics detection    |
+| 🎨 UI/UX Feedback        | Design quality assessment with suggestions |
+| 🔐 Security Observations | Surface-level security flags               |
+| 📋 Copy Report           | Copy full analysis to clipboard            |
+| 📥 Download PDF          | Export a branded PDF report                |
+| 🕐 History               | Last 10 analyses saved locally             |
+| ✅ URL Validation        | Smart URL normalization + error handling   |
 
 ---
 
@@ -120,6 +120,7 @@ npm run dev
 ```
 
 You should see:
+
 ```
   🚀 Server running at http://localhost:3001
   🤖 AI Provider: mock
@@ -143,6 +144,7 @@ npm run dev
 ```
 
 You should see:
+
 ```
   VITE v5.x  ready in 500ms
   ➜  Local:   http://localhost:5173/
@@ -162,8 +164,8 @@ By default, the app uses **mock responses** — realistic fake data generated lo
 
 ### Enable OpenAI (GPT-4o-mini)
 
-1. Get an API key at [platform.openai.com](https://platform.openai.com/api-keys)
-2. Edit `server/.env`:
+1. Get an API key at [platform.openai.com](https://platform.openai.com/api-keys) or any other platform of your choice.
+2. Create `server/.env`:
    ```env
    AI_PROVIDER=openai
    OPENAI_API_KEY=sk-your-key-here
@@ -191,6 +193,7 @@ By default, the app uses **mock responses** — realistic fake data generated lo
 Analyzes a website URL.
 
 **Request:**
+
 ```json
 {
   "url": "https://stripe.com"
@@ -198,6 +201,7 @@ Analyzes a website URL.
 ```
 
 **Response:**
+
 ```json
 {
   "summary": "Stripe is a financial infrastructure platform...",
@@ -208,6 +212,7 @@ Analyzes a website URL.
 ```
 
 **Error Response:**
+
 ```json
 {
   "error": "Unable to reach the website. Is the URL correct?"
@@ -232,24 +237,26 @@ Returns server status.
 ## 🧱 Tech Stack
 
 ### Frontend
-| Library | Purpose |
-|---|---|
-| React 18 | UI framework |
-| Vite 5 | Build tool + dev server |
-| Tailwind CSS 3 | Utility-first styling |
-| Framer Motion 11 | Animations |
-| Axios | HTTP requests |
-| jsPDF | PDF export |
+
+| Library          | Purpose                 |
+| ---------------- | ----------------------- |
+| React 18         | UI framework            |
+| Vite 5           | Build tool + dev server |
+| Tailwind CSS 3   | Utility-first styling   |
+| Framer Motion 11 | Animations              |
+| Axios            | HTTP requests           |
+| jsPDF            | PDF export              |
 
 ### Backend
-| Library | Purpose |
-|---|---|
-| Express 4 | HTTP server |
-| Axios | Fetch website HTML |
-| Cheerio | HTML parsing (server-side jQuery) |
-| OpenAI SDK | GPT-4 integration |
-| express-rate-limit | Rate limiting |
-| dotenv | Environment variables |
+
+| Library            | Purpose                           |
+| ------------------ | --------------------------------- |
+| Express 4          | HTTP server                       |
+| Axios              | Fetch website HTML                |
+| Cheerio            | HTML parsing (server-side jQuery) |
+| OpenAI SDK         | GPT-4 integration                 |
+| express-rate-limit | Rate limiting                     |
+| dotenv             | Environment variables             |
 
 ---
 
@@ -274,14 +281,14 @@ Returns server status.
 
 ## 🚧 Troubleshooting
 
-| Problem | Solution |
-|---|---|
-| `Cannot connect to analysis server` | Make sure `cd server && npm run dev` is running |
-| `Unable to reach the website` | The target site may block bots. Try another URL. |
-| `Request timed out` | Increase `FETCH_TIMEOUT` in `.env` |
-| `AI returned empty response` | Check your API key in `.env` and ensure you have credits |
-| Port 3001 already in use | Change `PORT=3002` in `server/.env` and update Vite proxy in `vite.config.js` |
-| Blank page on frontend | Check browser console for errors, ensure Tailwind CSS built correctly |
+| Problem                             | Solution                                                                      |
+| ----------------------------------- | ----------------------------------------------------------------------------- |
+| `Cannot connect to analysis server` | Make sure `cd server && npm run dev` is running                               |
+| `Unable to reach the website`       | The target site may block bots. Try another URL.                              |
+| `Request timed out`                 | Increase `FETCH_TIMEOUT` in `.env`                                            |
+| `AI returned empty response`        | Check your API key in `.env` and ensure you have credits                      |
+| Port 3001 already in use            | Change `PORT=3002` in `server/.env` and update Vite proxy in `vite.config.js` |
+| Blank page on frontend              | Check browser console for errors, ensure Tailwind CSS built correctly         |
 
 ---
 
@@ -289,14 +296,14 @@ Returns server status.
 
 ### `server/.env`
 
-| Variable | Default | Description |
-|---|---|---|
-| `PORT` | `3001` | Express server port |
-| `AI_PROVIDER` | `mock` | `mock`, `openai`, or `anthropic` |
-| `OPENAI_API_KEY` | — | OpenAI API key |
-| `ANTHROPIC_API_KEY` | — | Anthropic API key |
-| `CLIENT_ORIGIN` | `http://localhost:5173` | Frontend URL for CORS |
-| `FETCH_TIMEOUT` | `10000` | Website fetch timeout (ms) |
+| Variable            | Default                 | Description                      |
+| ------------------- | ----------------------- | -------------------------------- |
+| `PORT`              | `3001`                  | Express server port              |
+| `AI_PROVIDER`       | `mock`                  | `mock`, `openai`, or `anthropic` |
+| `OPENAI_API_KEY`    | —                       | OpenAI API key                   |
+| `ANTHROPIC_API_KEY` | —                       | Anthropic API key                |
+| `CLIENT_ORIGIN`     | `http://localhost:5173` | Frontend URL for CORS            |
+| `FETCH_TIMEOUT`     | `10000`                 | Website fetch timeout (ms)       |
 
 ---
 
