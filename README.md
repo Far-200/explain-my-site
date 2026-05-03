@@ -313,4 +313,4 @@ MIT — free to use, modify, and distribute.
 
 ---
 
-Built with ❤️ using React, Node.js, and Claude AI.
+Built with ❤️ using React, Node.js, and Claude AI. Stopping project development for now because of college exams.
